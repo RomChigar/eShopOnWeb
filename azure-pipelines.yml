@@ -34,11 +34,11 @@ steps:
   inputs:
     command: publish
     publishWebProjects: True
-    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)'
+    arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)/rchigar'
     zipAfterPublish: True
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
   inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+    PathtoPublish: '$(build.artifactstagingdirectory)/rchigar'
   condition: succeededOrFailed()
